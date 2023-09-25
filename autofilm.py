@@ -81,7 +81,14 @@ parser.add_argument('--subtitle', type=str, help='是否下载字幕文件', cho
 parser.add_argument('--nfo', type=str, help='是否下载NFO文件', choices=['true', 'false'], default='false')
 parser.add_argument('--img', type=str, help='是否下载JPG和PNG文件', choices=['true', 'false'], default='false')
 args = parser.parse_args()
-
+# 检查参数是否为None，如果是则使用默认值
+args.webdav_url = args.webdav_url or "http://example.com/webdav"
+args.username = args.username or "your_username"
+args.password = args.password or "your_password"
+args.output_path = args.output_path or "/path/to/output"
+args.subtitle = args.subtitle or 'true'
+args.nfo = args.nfo or 'false'
+args.img = args.img or 'false'          
 print('启动参数：')
 print(f'Webdav服务器地址：{args.webdav_url}')
 print(f'Webdav登入用户名：{args.username}')
