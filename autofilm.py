@@ -110,7 +110,7 @@ for url in urls:
     local_path = os.path.join(args.output_path, url.replace(args.webdav_url, '').lstrip('/'))
     file_ext = filename[-3:].upper()
 
-    if file_ext in ['MP4', 'MKV', 'FLV', 'AVI']:
+    if file_ext in ['MP4', 'MKV', 'FLV', 'AVI','RMVB','WMV','MOV','TS','WEBM','ISO','MPG']:
         if not os.path.exists(os.path.join(args.output_path, filename[:-3] + 'strm')):
             print('正在处理：' + filename)
             try:
